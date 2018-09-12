@@ -1,0 +1,4 @@
+nohup ./darknet detector train build/darknet/x64/data/obj.data cfg/yolov3-obj.cfg build/darknet/x64/backup/yolov3-obj_1500.weights -dont_show > log_file.txt 2>&1 &
+
+# running plates images to crop character and find number plate digits
+./darknet detector test build/darknet/x64/data/obj.data cfg/yolov3-obj.cfg build/darknet/x64/backup/yolov3-lp_2000.weights -thresh 0.50 -dont_show -ext_output < build/darknet/x64/data/obj_test.txt > result.txt
